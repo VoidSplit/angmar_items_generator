@@ -36,12 +36,35 @@ button {
     height: 35px;
     min-width: 220px;
 }
+.output {
+    display: flex;
+}
+.output input {
+    width: 300px;
+    border-radius: 3px 0 0 3px;
+    border: 1px solid #4F4F4F;
+    border-right: 0;
+}
+.output input:focus {
+    outline: none;
+}
+.output button {
+    min-width: 0;
+    padding: 8px 15px;
+
+    
+    border-radius: 0 3px 3px 0;
+    border: 1px solid #4F4F4F;
+    border-left: 0;
+    cursor: pointer;
+    transition: background-color .2s;
+}
+.output button:hover {
+    background-color: #E5E5E5;
+}
 input {
     padding: 8px 15px;
     min-width: 220px;
-}
-#result {
-    width: 300px;
 }
 #version {
     position: fixed;
@@ -50,3 +73,5 @@ input {
     padding: 15px;
     color: #bbb;
 }
+/*
+*/

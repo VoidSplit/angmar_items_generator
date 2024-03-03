@@ -11,7 +11,10 @@
     <div id="item_selector_grid"></div>
     <input type="text" id="selector_input" value="@p">
     <button onclick="generate()">Generer la commande</button>
-    <input id="result" type="text" placeholder="/give ..">
+    <div class="output">
+        <input id="result" type="text" placeholder="/give ..">
+        <button onclick="copy_output()">Copier</button>
+    </div>
     <span id="version">Version - Beta 1.1</span>
 </body>
 </html>

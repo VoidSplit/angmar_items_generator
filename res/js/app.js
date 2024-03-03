@@ -127,3 +127,11 @@ const generate = () => {
     const pattern = `/give ${selector_input.value} minecraft:${active_item.getAttribute("data-item")} 0 1 {CustomModelData:${active_item.getAttribute("data-cmd")}}`
     document.getElementById('result').value = pattern
 }
+const copy_output = () => {
+    const output = document.getElementById('result')
+
+    output.select()
+    output.setSelectionRange(0, 99999)
+
+    navigator.clipboard.writeText(output.value)
+}
