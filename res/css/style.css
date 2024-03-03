@@ -24,7 +24,7 @@ body {
     padding: 3px;
 }
 #item_selector_grid .item.active {
-    background-color: blue;
+    background-color: #eee;
 }
 #item_selector_grid .item img {
     height: 100%;
