@@ -115,7 +115,7 @@ item_list.forEach(category => {
             active_item = item_dom
         })
         let image = new Image()
-        let src = `/res/images/${texture.name}.png`
+        let src = `https://voidsplit.github.io/angmar_items_generator/res/images/${texture.name}.png`
         image.src = src
         item_dom.append(image)
         document.getElementById('item_selector_grid').append(item_dom)
