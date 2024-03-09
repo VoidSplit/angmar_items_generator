@@ -8,13 +8,15 @@
     <script src="./res/js/app.js" defer></script>
 </head>
 <body>
-    <div id="item_selector_grid"></div>
-    <input type="text" id="selector_input" value="@p">
-    <button onclick="generate()">Generer la commande</button>
-    <div class="output">
-        <input id="result" type="text" placeholder="/give ..">
-        <button onclick="copy_output()">Copier</button>
-    </div>
+    <section id="app">
+        <div id="item_selector_grid"></div>
+        <input type="text" id="selector_input" value="@p" placeholder="@p, @a, playername">
+        <button onclick="generate()">Generer la commande</button>
+        <div class="output">
+            <input id="result" type="text" placeholder="/give ..">
+            <button onclick="copy_output()">Copier</button>
+        </div>
+    </section>
     <span id="version">Version - Beta 1.1</span>
 </body>
 </html>

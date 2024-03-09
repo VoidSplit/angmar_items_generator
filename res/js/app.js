@@ -23,6 +23,26 @@ const item_list = [
                 name : "pain_brioche",
                 cmd: 5
             },
+            {
+                name : "pate_a_pizza",
+                cmd: 6
+            },
+            {
+                name : "brioche_aux_raisins",
+                cmd: 7
+            },
+            {
+                name : "brioche_tressee",
+                cmd: 8
+            },
+            {
+                name : "prefous",
+                cmd: 9
+            },
+            {
+                name : "baguette",
+                cmd: 10
+            },
         ]
     },
     {
@@ -93,6 +113,15 @@ const item_list = [
             {
                 name : "truite",
                 cmd: 4
+            },
+        ]
+    },
+    {
+        item: "snowball",
+        textures: [
+            {
+                name : "pine",
+                cmd: 1
             },
         ]
     }
