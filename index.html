@@ -11,6 +11,50 @@
     <section id="app">
         <div id="item_selector_grid"></div>
         <input type="text" id="selector_input" value="@p" placeholder="@p, @a, playername">
+        <section id="configurator" style="display: none;">
+            <div class="fields">
+                <div class="field">
+                    <p class="name">Name</p>
+                    <div class="inner">
+                        <div class="header">
+                            <div class="bold">
+                                <span>B</span>
+                                <input type="checkbox" name="" id="name_bold">
+                                
+                            </div>
+                            <div class="italic">
+                                <span>U</span>
+                                <input type="checkbox" name="" id="">
+                            </div>
+                            <div class="underline">
+                                <span>U</span>
+                                <input type="checkbox" name="" id="">
+                            </div>
+                            <div class="barre">
+                                <span>S</span>
+                                <input type="checkbox" name="" id="">
+                            </div>
+                            <div class="color"></div>
+                        </div>
+                        <input type="text" name="" id="">
+                    </div>
+                </div>
+                <div class="field">
+                    <p class="name">Lore</p>
+                    <div class="inner">
+                        <div class="header">
+                            <label class="bold"><input type="checkbox" name="" id=""></label>
+                            <div class="italic"><input type="checkbox" name="" id=""></div>
+                            <div class="underline"><input type="checkbox" name="" id=""></div>
+                            <div class="barre"><input type="checkbox" name="" id=""></div>
+                            <div class="color"></div>
+                        </div>
+                        <textarea name="" id="" cols="30" rows="1"></textarea>
+                    </div>
+                </div>
+            </div>
+            <div class="display"></div>
+        </section>
         <button onclick="generate()">Generer la commande</button>
         <div class="output">
             <input id="result" type="text" placeholder="/give ..">

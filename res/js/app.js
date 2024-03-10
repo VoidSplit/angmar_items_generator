@@ -124,7 +124,79 @@ const item_list = [
                 cmd: 1
             },
         ]
-    }
+    },
+    {
+        item: "golden_carrot",
+        textures: [
+            {
+                name : "confiture",
+                cmd: 1
+            },
+            {
+                name : "meule_de_fromage",
+                cmd: 2
+            },
+            {
+                name : "fromage_1",
+                cmd: 3
+            },
+            {
+                name : "fromage_2",
+                cmd: 4
+            },
+        ]
+    },
+    {
+        item: "milk_bucket",
+        textures: [
+            {
+                name : "seau_de_fromage",
+                cmd: 1
+            },
+        ]
+    },
+    {
+        item: "potion",
+        potion_color: "16777215",
+        textures: [
+            {
+                name : "bouteille_1",
+                cmd: 1
+            },
+            {
+                name : "bouteille_2",
+                cmd: 2
+            },
+            {
+                name : "bouteille_3",
+                cmd: 3
+            },
+            {
+                name : "bouteille_4",
+                cmd: 4
+            },
+            {
+                name : "cafe",
+                cmd: 5
+            },
+            {
+                name : "capuccino",
+                cmd: 6
+            },
+            {
+                name : "expresso",
+                cmd: 7
+            },
+            {
+                name : "biere",
+                cmd: 8
+            },
+            {
+                name : "sonde_urinaire",
+                cmd: 9
+            },
+        ]
+    },
 ]
 
 let active_item;
@@ -136,6 +208,9 @@ item_list.forEach(category => {
         item_dom.setAttribute('tabindex', 1)
         item_dom.setAttribute('data-item', category.item)
         item_dom.setAttribute('data-cmd', texture.cmd)
+        if(category.potion_color) {
+            item_dom.setAttribute('data-potion-color', category.potion_color)
+        }
         item_dom.addEventListener('click', (e) => {
             if(active_item) {
                 active_item.classList.remove('active')
@@ -153,7 +228,8 @@ item_list.forEach(category => {
 const selector_input = document.getElementById('selector_input')
 
 const generate = () => {
-    const pattern = `/give ${selector_input.value} minecraft:${active_item.getAttribute("data-item")} 0 1 {CustomModelData:${active_item.getAttribute("data-cmd")}}`
+    console.log(active_item.getAttribute("data-potion-color"))
+    const pattern = `/give ${selector_input.value} minecraft:${active_item.getAttribute("data-item")} 0 1 {${active_item.getAttribute("data-potion-color") ? `CustomPotionColor:${active_item.getAttribute("data-potion-color")},` : ""}CustomModelData:${active_item.getAttribute("data-cmd")}}`
     document.getElementById('result').value = pattern
 }
 const copy_output = () => {
