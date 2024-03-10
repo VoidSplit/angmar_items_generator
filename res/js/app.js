@@ -1,5 +1,6 @@
 // const pattern = `/give ${selector} ${item_type} 0 1 {CustomModelData:${custom_model_data}}`
 const item_list = [
+    //bread
     {
         item: "bread",
         textures: [
@@ -43,8 +44,13 @@ const item_list = [
                 name : "baguette",
                 cmd: 10
             },
+            {
+                name : "pain_de_mie",
+                cmd: 12
+            },
         ]
     },
+    //glistering_melon_slice
     {
         item: "glistering_melon_slice",
         textures: [
@@ -70,6 +76,7 @@ const item_list = [
             },
         ]
     },
+    //knowledge_book
     {
         item: "knowledge_book",
         textures: [
@@ -90,11 +97,68 @@ const item_list = [
                 cmd: 4
             },
             {
-                name : "golden_key",
+                name : "cle_fer",
                 cmd: 5
+            },
+            {
+                name : "cle_cuivre",
+                cmd: 6
+            },
+            {
+                name : "cle_or",
+                cmd: 7
+            },
+            {
+                name : "cadena_fer",
+                cmd: 8
+            },
+            {
+                name : "cadena_cuivre",
+                cmd: 9
+            },
+            {
+                name : "cadena_or",
+                cmd: 10
+            },
+            {
+                name : "lanterne_eteinte",
+                cmd: 11
+            },
+            {
+                name : "lanterne_allumee",
+                cmd: 12
+            },
+            {
+                name : "pignon",
+                cmd: 13
+            },
+            {
+                name : "trompette",
+                cmd: 14
+            },
+            {
+                name : "lettre_ouverte",
+                cmd: 15
+            },
+            {
+                name : "lettre_fermee",
+                cmd: 16
+            },
+            {
+                name : "lettre_enroulee",
+                cmd: 17
+            },
+            {
+                name : "lettre_dechiree",
+                cmd: 18
+            },
+            {
+                name : "bourse",
+                cmd: 19
             },
         ]
     },
+    //cod
     {
         item: "cod",
         textures: [
@@ -114,8 +178,17 @@ const item_list = [
                 name : "truite",
                 cmd: 4
             },
+            {
+                name : "sardine",
+                cmd: 5
+            },
+            {
+                name : "meduse",
+                cmd: 6
+            },
         ]
     },
+    //snowball
     {
         item: "snowball",
         textures: [
@@ -125,6 +198,7 @@ const item_list = [
             },
         ]
     },
+    //golden_carrot
     {
         item: "golden_carrot",
         textures: [
@@ -146,6 +220,7 @@ const item_list = [
             },
         ]
     },
+    //milk_bucket
     {
         item: "milk_bucket",
         textures: [
@@ -155,6 +230,7 @@ const item_list = [
             },
         ]
     },
+    //potion
     {
         item: "potion",
         potion_color: "16777215",
@@ -194,6 +270,58 @@ const item_list = [
             {
                 name : "sonde_urinaire",
                 cmd: 9
+            },
+            {
+                name : "bouteille_5",
+                cmd: 10
+            },
+        ]
+    },
+    //carrot
+    {
+        item: "carrot",
+        textures: [
+            {
+                name : "carotte_sauvage",
+                cmd: 1
+            },
+            {
+                name : "pomme_sauvage",
+                cmd: 2
+            },
+            {
+                name : "tomate",
+                cmd: 3
+            },
+            {
+                name : "cerises",
+                cmd: 4
+            },
+            {
+                name : "cote_de_boeuf",
+                cmd: 5
+            },
+            {
+                name : "cote_de_porc",
+                cmd: 6
+            },
+            {
+                name : "citron",
+                cmd: 7
+            },
+            {
+                name : "cone_de_glace",
+                cmd: 8
+            }
+        ]
+    },
+    //spider_eye
+    {
+        item: "spider_eye",
+        textures: [
+            {
+                name : "champignon_sauvage",
+                cmd: 1
             },
         ]
     },
