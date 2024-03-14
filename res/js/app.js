@@ -286,10 +286,6 @@ const item_list = [
                 cmd: 1
             },
             {
-                name : "pomme_sauvage",
-                cmd: 2
-            },
-            {
                 name : "tomate",
                 cmd: 3
             },
