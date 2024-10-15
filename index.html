@@ -3,64 +3,102 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link rel="stylesheet" href="./res/css/style.css">
-    <script src="./res/js/app.js" defer></script>
+    <title>Angmar's Items Generator</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+    <script src="./app.js" defer></script>
 </head>
 <body>
-    <section id="app">
-        <div id="item_selector_grid"></div>
-        <input type="text" id="selector_input" value="@p" placeholder="@p, @a, playername">
-        <section id="configurator" style="display: none;">
-            <div class="fields">
-                <div class="field">
-                    <p class="name">Name</p>
-                    <div class="inner">
-                        <div class="header">
-                            <div class="bold">
-                                <span>B</span>
-                                <input type="checkbox" name="" id="name_bold">
-                                
-                            </div>
-                            <div class="italic">
-                                <span>U</span>
-                                <input type="checkbox" name="" id="">
-                            </div>
-                            <div class="underline">
-                                <span>U</span>
-                                <input type="checkbox" name="" id="">
-                            </div>
-                            <div class="barre">
-                                <span>S</span>
-                                <input type="checkbox" name="" id="">
-                            </div>
-                            <div class="color"></div>
-                        </div>
-                        <input type="text" name="" id="">
+    <div class="content">
+        <h1>Liste des objets</h1>
+        <!--<div class="search-bar">
+            <input type="text" placeholder="">
+            <button>Rechercher</button>
+        </div>-->
+        <div class="item_list" id="item_list">
+
+        </div>
+        <h1>Personnalisation</h1>
+        <div class="vizualizer">
+            <div class="editors">
+                <h2>Nom de l'objet</h2>
+                <div class="text-editor">
+                    <div class="top">
+                        <div class="btn"><i class="fa-solid fa-bold"></i></div>
+                        <div class="btn"><i class="fa-solid fa-italic"></i></div>
+                        <div class="btn"><i class="fa-solid fa-underline"></i></div>
+                        <div class="btn"><i class="fa-solid fa-strikethrough"></i></div>
+                        <div class="btn"><i class="fa-solid fa-text-slash"></i></div>
+                        <div class="btn"><i class="fa-solid fa-link"></i></div>
+                        <div class="separator"></div>
+                        <div class="btn btn-color"><i class="fa-solid fa-a"></i><span></span></div>
+                        <div class="btn"><i class="fa-solid fa-section"></i></div>
+                        <div class="separator"></div>
+                        <div class="btn"><i class="fa-solid fa-hashtag"></i></div>
+                        <div class="separator"></div>
+                        <div class="btn"><i class="fa-solid fa-question"></i></div>
                     </div>
+                    <input type="text" class="text-content" id="name_input">
                 </div>
-                <div class="field">
-                    <p class="name">Lore</p>
-                    <div class="inner">
-                        <div class="header">
-                            <label class="bold"><input type="checkbox" name="" id=""></label>
-                            <div class="italic"><input type="checkbox" name="" id=""></div>
-                            <div class="underline"><input type="checkbox" name="" id=""></div>
-                            <div class="barre"><input type="checkbox" name="" id=""></div>
-                            <div class="color"></div>
+                <h2>Description de l'objet</h2>
+                <div class="text-editor">
+                    <div class="top">
+                        <div class="btn"><i class="fa-solid fa-bold"></i></div>
+                        <div class="btn"><i class="fa-solid fa-italic"></i></div>
+                        <div class="btn"><i class="fa-solid fa-underline"></i></div>
+                        <div class="btn"><i class="fa-solid fa-strikethrough"></i></div>
+                        <div class="btn"><i class="fa-solid fa-text-slash"></i></div>
+                        <div class="btn"><i class="fa-solid fa-link"></i></div>
+                        <div class="separator"></div>
+                        <div class="btn btn-color"><i class="fa-solid fa-a"></i><span></span></div>
+                        <div class="btn"><i class="fa-solid fa-section"></i></div>
+                        <div class="separator"></div>
+                        <div class="btn"><i class="fa-solid fa-hashtag"></i></div>
+                        <div class="separator"></div>
+                        <div class="btn"><i class="fa-solid fa-question"></i></div>
+                    </div>
+                    
+                    <textarea class="text-content" cols="35" wrap="hard" name="" id="lore_input"></textarea>
+                </div>
+            </div>
+            <div class="visualizer_canvas">
+                <div class="inner">
+                    <div id="visualizer_content">
+                        <div class="image_preview">
+                            <img id="image_preview_box" src="" alt="" srcset="">
                         </div>
-                        <textarea name="" id="" cols="30" rows="1"></textarea>
+                        <div class="box">
+                            <div class="name" id="name_box"></div>
+                            <pre class="lore" id="lore_box"></pre>
+                        </div>
+                    </div>
+                    <div class="tips">
+                        <span>
+                            * Dans cet éditeur, les noms d'objets et la description sont de base du texte normal (non italique).
+                        </span>
+                        <span>
+                            * La description ne passe pas à la ligne automatiquement, (vous devrez ajouter des sauts de ligne).
+                        </span>
+                        <span>
+                            * Les boissons ne fonctionnent pas encore, la commande est incomplète.
+                        </span>
                     </div>
                 </div>
             </div>
-            <div class="display"></div>
-        </section>
-        <button onclick="generate()">Generer la commande</button>
-        <div class="output">
-            <input id="result" type="text" placeholder="/give ..">
-            <button onclick="copy_output()">Copier</button>
         </div>
-    </section>
-    <span id="version">Version - Beta 1.1</span>
+        <h1>Commande</h1>
+        <div class="output">
+            <input type="text" id="output_input" readonly value="Lorem ipsum dolor sit amet consectetur adipisicing elit. Iste nisi repellat numquam. Voluptates dolor optio commodi quos vel aliquid eligendi voluptas culpa. Iste, perferendis natus?">
+            <button id="output_btn">Copier</button>
+        </div>
+
+        <div id="copied_popup" style="--percentage: 0%">
+            <span>La commande a été copiée !</span>
+            <div class="indicator">
+                <span></span>
+            </div>
+        </div>
+    </div>
 </body>
 </html>
+
