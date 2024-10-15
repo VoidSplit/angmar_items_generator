@@ -54,7 +54,7 @@ body {
     background-color: #ffffff;
     width: 100%;
     max-width: 1250px;
-    padding: 40px 50px;
+    padding: 20px 50px;
     display: flex;
     flex-direction: column;
     gap: 15px;
@@ -340,6 +340,21 @@ body {
 #copied_popup.visible {
     display: flex;
     flex-direction: column;
+}
+.inline_row {
+    display: flex;
+    gap: 10px;
+}
+.labeled {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+.labeled input {
+    padding: 8px 10px;
+    border-radius: 5px;
+    border: none;
+    border: 1px solid #000;
 }
 
 @media screen and (max-width: 930px) {

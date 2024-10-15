@@ -400,6 +400,8 @@ let lore_box = document.getElementById('lore_box')
 
 let name_input = document.getElementById('name_input')
 let lore_input = document.getElementById('lore_input')
+let quantity_input = document.getElementById('quantity')
+let player_selector = document.getElementById('player_selector')
 
 let selected_item;
 
@@ -407,10 +409,12 @@ let custom_name = ""
 let custom_lore = ""
 let custom_lore_cmd = ""
 
+let quantity = 1
 let selector = "@s"
 let cmd_item = undefined
 let cmd_id = undefined
 let cmd_name = undefined
+let potion_color = undefined
 
 item_categories.forEach(cat => {
     cat.textures.forEach(item => {
@@ -422,12 +426,17 @@ item_categories.forEach(cat => {
         item_list.append(DOM)
 
         DOM.addEventListener('click', () => {
+            potion_color = undefined
             if(selected_item) {
                 selected_item.classList.remove('active')
             }
             DOM.classList.add('active')
             selected_item = DOM
 
+            if(cat.potion_color !== undefined) {
+                console.log(cat)
+                potion_color = cat.potion_color
+            }
 
             image_preview_box.src = `./assets/items/${item.name}.png`
 
@@ -455,15 +464,27 @@ const update = () => {
         lore_box.textContent = custom_lore
     
     
-        let command = `/minecraft:give ${selector} minecraft:${cmd_item}[custom_model_data=${cmd_id},custom_name='["",{"text":"${custom_name}","italic":false}]'${custom_lore !== "" ? `,${custom_lore_cmd}` : ``}] 1`
+        let command = `/minecraft:give ${selector} minecraft:${cmd_item}[custom_model_data=${cmd_id},custom_name='["",{"text":"${custom_name}","italic":false}]'${custom_lore !== "" ? `,${custom_lore_cmd}` : ``}${potion_color !== undefined ? `,potion_contents={custom_color:${potion_color}}` : ``}] ${quantity}`
         output.value = command
     }
 }
 
 name_input.addEventListener('input', (e) => {
-
     custom_name = e.target.value
-    
+    update()
+})
+player_selector.addEventListener('input', (e) => {
+
+    if(e.target.value.length > 0) selector = e.target.value
+    else selector = "@s"
+    update()
+})
+quantity_input.addEventListener('input', (e) => {
+    if(e.target.value.length > 0) {
+        if(e.target.value > 0 && e.target.value <= 64) quantity = e.target.value
+        else quantity = 1
+    }
+    else quantity = 1
     update()
 })
 lore_input.addEventListener('input', (e) => {
@@ -472,7 +493,6 @@ lore_input.addEventListener('input', (e) => {
         lines.push(`'["",{"text":"${line}","italic":false}]'`)
     })
     let lore_command = `lore=[${lines.join(',')}]`
-    
     custom_lore = e.target.value.split("\n").join("\n")
     custom_lore_cmd = lore_command
     update()
