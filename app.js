@@ -111,11 +111,6 @@ let item_categories = [
                 cmd: 3
             },
             {
-                name : "marteau",
-                display_name: "Marteau",
-                cmd: 4
-            },
-            {
                 name : "cle_fer",
                 display_name: "Cle en fer",
                 cmd: 5
@@ -144,16 +139,6 @@ let item_categories = [
                 name : "cadena_or",
                 display_name: "Cadena en or",
                 cmd: 10
-            },
-            {
-                name : "lanterne_eteinte",
-                display_name: "Lanterne eteinte",
-                cmd: 11
-            },
-            {
-                name : "lanterne_allumee",
-                display_name: "Lanterne allumee",
-                cmd: 12
             },
             {
                 name : "pignon",
