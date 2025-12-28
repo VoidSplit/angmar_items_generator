@@ -448,8 +448,7 @@ const update = () => {
         name_box.textContent = custom_name
         lore_box.textContent = custom_lore
     
-    
-        let command = `/minecraft:give ${selector} minecraft:${cmd_item}[custom_model_data=${cmd_id},custom_name='["",{"text":"${custom_name}","italic":false}]'${custom_lore !== "" ? `,${custom_lore_cmd}` : ``}${potion_color !== undefined ? `,potion_contents={custom_color:${potion_color}}` : ``}] ${quantity}`
+        let command = `/minecraft:give ${selector} minecraft:${cmd_item}[minecraft:custom_model_data={value:${cmd_id}},minecraft:custom_name={"text":"${custom_name}","italic":false} ${custom_lore !== "" ? `,${custom_lore_cmd}` : ``}${potion_color !== undefined ? `,potion_contents={custom_color:${potion_color}}` : ``}] ${quantity}`
         output.value = command
     }
 }
@@ -475,7 +474,7 @@ quantity_input.addEventListener('input', (e) => {
 lore_input.addEventListener('input', (e) => {
     let lines = []
     e.target.value.split("\n").forEach(line => {
-        lines.push(`'["",{"text":"${line}","italic":false}]'`)
+        lines.push(`{"text":"${line}","italic":false}`)
     })
     let lore_command = `lore=[${lines.join(',')}]`
     custom_lore = e.target.value.split("\n").join("\n")
