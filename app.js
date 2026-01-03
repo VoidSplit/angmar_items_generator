@@ -1,383 +1,769 @@
-let item_categories = [
-    //bread
+let item_list_array = [
     {
-        item: "bread",
-        textures: [
-            {
-                name : "brioche",
-                display_name: "Brioche",
-                cmd: 1
-            },
-            {
-                name : "cake_au_raisin",
-                display_name: "Cake au raisin",
-                cmd: 2
-            },
-            {
-                name : "croissant",
-                display_name: "Croissant",
-                cmd: 3
-            },
-            {
-                name : "donut",
-                display_name: "Donut",
-                cmd: 4
-            },
-            {
-                name : "pain_brioche",
-                display_name: "Pain brioche",
-                cmd: 5
-            },
-            {
-                name : "pate_a_pizza",
-                display_name: "Pate a pizza",
-                cmd: 6
-            },
-            {
-                name : "brioche_aux_raisins",
-                display_name: "Brioche aux raisins",
-                cmd: 7
-            },
-            {
-                name : "brioche_tressee",
-                display_name: "Brioche tressee",
-                cmd: 8
-            },
-            {
-                name : "prefous",
-                display_name: "Prefous",
-                cmd: 9
-            },
-            {
-                name : "baguette",
-                display_name: "Baguette",
-                cmd: 10
-            },
-            {
-                name : "pain_de_mie",
-                display_name: "Pain de mie",
-                cmd: 12
-            },
-        ]
+        category: "Food",
+        name: "baguette",
+        lore: "ceci est un lore",
+        display_name: "Baguette",
+        is_eatable: true,
+        eatable_infinite: false,
+        saturation: 4,
+        nutrition: 3,
+        drinkable: false
     },
-    //glistering_melon_slice
     {
-        item: "glistering_melon_slice",
-        textures: [
-            {
-                name : "piece_cuivre",
-                display_name: "Ecu de cuivre",
-                cmd: 1
-            },
-            {
-                name : "piece_argent",
-                display_name: "Ecu d'argent",
-                cmd: 2
-            },
-            {
-                name : "piece_or",
-                display_name: "Ecu d'or",
-                cmd: 3
-            },
-            {
-                name : "perle_brune",
-                display_name: "Perle brune",
-                cmd: 4
-            },
-            {
-                name : "perle_blonde",
-                display_name: "Perle blonde",
-                cmd: 5
-            },
-        ]
+        category: "Drink",
+        name: "biere",
+        lore: "",
+        display_name: "Biere",
+        is_eatable: false,
+        eatable_infinite: false,
+        saturation: undefined,
+        nutrition: undefined,
+        drinkable: false
     },
-    //knowledge_book
     {
-        item: "knowledge_book",
-        textures: [
-            {
-                name : "huitre",
-                display_name: "Huitre",
-                cmd: 1
-            },
-            {
-                name : "huitre_vide",
-                display_name: "Huitre vide",
-                cmd: 2
-            },
-            {
-                name : "coquille_huitre",
-                display_name: "Coquille huitre",
-                cmd: 3
-            },
-            {
-                name : "cle_fer",
-                display_name: "Cle en fer",
-                cmd: 5
-            },
-            {
-                name : "cle_cuivre",
-                display_name: "Cle en cuivre",
-                cmd: 6
-            },
-            {
-                name : "cle_or",
-                display_name: "Cle en or",
-                cmd: 7
-            },
-            {
-                name : "cadena_fer",
-                display_name: "Cadena en fer",
-                cmd: 8
-            },
-            {
-                name : "cadena_cuivre",
-                display_name: "Cadena en cuivre",
-                cmd: 9
-            },
-            {
-                name : "cadena_or",
-                display_name: "Cadena en or",
-                cmd: 10
-            },
-            {
-                name : "pignon",
-                display_name: "Pignon",
-                cmd: 13
-            },
-            {
-                name : "trompette",
-                display_name: "Trompette",
-                cmd: 14
-            },
-            {
-                name : "bourse",
-                display_name: "Bourse",
-                cmd: 15
-            },
-        ]
+        category: "Miscellaneous",
+        name: "bourse",
+        lore: "",
+        display_name: "Bourse",
+        is_eatable: false,
+        eatable_infinite: false,
+        saturation: undefined,
+        nutrition: undefined,
+        drinkable: false
     },
-    //cod
     {
-        item: "cod",
-        textures: [
-            {
-                name : "brochet",
-                display_name: "Brochet",
-                cmd: 1
-            },
-            {
-                name : "carpe",
-                display_name: "Carpe",
-                cmd: 2
-            },
-            {
-                name : "thon",
-                display_name: "Thon",
-                cmd: 3
-            },
-            {
-                name : "truite",
-                display_name: "Truite",
-                cmd: 4
-            },
-            {
-                name : "sardine",
-                display_name: "Sardine",
-                cmd: 5
-            },
-            {
-                name : "meduse",
-                display_name: "Meduse",
-                cmd: 6
-            },
-        ]
+        category: "Drink",
+        name: "bouteille_1",
+        lore: "",
+        display_name: "Bouteille",
+        is_eatable: false,
+        eatable_infinite: false,
+        saturation: undefined,
+        nutrition: undefined,
+        drinkable: true
     },
-    //snowball
     {
-        item: "snowball",
-        textures: [
-            {
-                name : "pine",
-                display_name: "Pomme de pin",
-                cmd: 1
-            },
-        ]
+        category: "Drink",
+        name: "bouteille_2",
+        lore: "",
+        display_name: "Bouteille",
+        is_eatable: false,
+        eatable_infinite: false,
+        saturation: undefined,
+        nutrition: undefined,
+        drinkable: true
     },
-    //golden_carrot
     {
-        item: "golden_carrot",
-        textures: [
-            {
-                name : "confiture",
-                display_name: "Confiture",
-                cmd: 1
-            },
-            {
-                name : "meule_de_fromage",
-                display_name: "Meule de fromage",
-                cmd: 2
-            },
-            {
-                name : "fromage_1",
-                display_name: "Fromage",
-                cmd: 3
-            },
-            {
-                name : "fromage_2",
-                display_name: "Emmental",
-                cmd: 4
-            },
-        ]
+        category: "Drink",
+        name: "bouteille_3",
+        lore: "",
+        display_name: "Bouteille",
+        is_eatable: false,
+        eatable_infinite: false,
+        saturation: undefined,
+        nutrition: undefined,
+        drinkable: true
     },
-    //milk_bucket
     {
-        item: "milk_bucket",
-        textures: [
-            {
-                name : "seau_de_fromage",
-                display_name: "Seau de fromage",
-                cmd: 1
-            },
-        ]
+        category: "Drink",
+        name: "bouteille_4",
+        lore: "",
+        display_name: "Bouteille",
+        is_eatable: false,
+        eatable_infinite: false,
+        saturation: undefined,
+        nutrition: undefined,
+        drinkable: true
     },
-    //potion
     {
-        item: "potion",
-        potion_color: "16777215",
-        textures: [
-            {
-                name : "biere",
-                display_name: "Biere",
-                cmd: 1
-            },
-            {
-                name : "bouteille_1",
-                display_name: "Bouteille",
-                cmd: 2
-            },
-            {
-                name : "bouteille_2",
-                display_name: "Bouteille",
-                cmd: 3
-            },
-            {
-                name : "bouteille_3",
-                display_name: "Bouteille",
-                cmd: 4
-            },
-            {
-                name : "bouteille_4",
-                display_name: "Bouteille",
-                cmd: 5
-            },
-            {
-                name : "bouteille_5",
-                display_name: "Bouteille",
-                cmd: 6
-            },
-            {
-                name : "cafe",
-                display_name: "Cafe",
-                cmd: 7
-            },
-            {
-                name : "capuccino",
-                display_name: "Capuccino",
-                cmd: 8
-            },
-            {
-                name : "expresso",
-                display_name: "Expresso",
-                cmd: 9
-            }
-        ]
+        category: "Drink",
+        name: "bouteille_5",
+        lore: "",
+        display_name: "Bouteille",
+        is_eatable: false,
+        eatable_infinite: false,
+        saturation: undefined,
+        nutrition: undefined,
+        drinkable: true
     },
-    //carrot
     {
-        item: "carrot",
-        textures: [
-            {
-                name : "carotte_sauvage",
-                display_name: "Carotte sauvage",
-                cmd: 1
-            },
-            {
-                name : "tomate",
-                display_name: "Tomate",
-                cmd: 3
-            },
-            {
-                name : "cerises",
-                display_name: "Cerises",
-                cmd: 4
-            },
-            {
-                name : "cote_de_boeuf",
-                display_name: "Cote de boeuf",
-                cmd: 5
-            },
-            {
-                name : "cote_de_porc",
-                display_name: "Cote de porc",
-                cmd: 6
-            },
-            {
-                name : "citron",
-                display_name: "Citron",
-                cmd: 7
-            },
-            {
-                name : "cone_de_glace",
-                display_name: "Cone de glace",
-                cmd: 8
-            }
-        ]
+        category: "Food",
+        name: "brioche_aux_raisins",
+        lore: "",
+        display_name: "Brioche aux raisins",
+        is_eatable: true,
+        eatable_infinite: false,
+        saturation: 5,
+        nutrition: 5,
+        drinkable: false
     },
-    //spider_eye
     {
-        item: "spider_eye",
-        textures: [
-            {
-                name : "champignon_sauvage",
-                display_name: "Champignon sauvage",
-                cmd: 1
-            },
-        ]
+        category: "Food",
+        name: "brioche_tressee",
+        lore: "",
+        display_name: "Brioche tressée",
+        is_eatable: true,
+        eatable_infinite: false,
+        saturation: 4,
+        nutrition: 3,
+        drinkable: false
     },
-    // writable_book
     {
-        item: "writable_book",
-        textures: [
-            {
-                name : "lettre_ouverte",
-                display_name: "Lettre ouverte",
-                cmd: 1
-            },
-            {
-                name : "lettre_fermee",
-                display_name: "Lettre fermee",
-                cmd: 2
-            },
-            {
-                name : "lettre_enroulee",
-                display_name: "Lettre enroulee",
-                cmd: 3
-            },
-            {
-                name : "lettre_dechiree",
-                display_name: "Lettre dechiree",
-                cmd: 4
-            },
-        ]
-    }
+        category: "Food",
+        name: "brioche",
+        lore: "",
+        display_name: "Brioche",
+        is_eatable: true,
+        eatable_infinite: false,
+        saturation: 4,
+        nutrition: 3,
+        drinkable: false
+    },
+    {
+        category: "Food",
+        name: "brochet",
+        lore: "",
+        display_name: "Brochet",
+        is_eatable: true,
+        eatable_infinite: false,
+        saturation: 2,
+        nutrition: 2,
+        drinkable: false
+    },
+    {
+        category: "Miscellaneous",
+        name: "cachet_de_cire",
+        lore: "",
+        display_name: "Cachet de cire",
+        is_eatable: false,
+        eatable_infinite: false,
+        saturation: undefined,
+        nutrition: undefined,
+        drinkable: false
+    },
+    {
+        category: "Miscellaneous",
+        name: "cadena_en_cuivre",
+        lore: "",
+        display_name: "Cadena en cuivre",
+        is_eatable: false,
+        eatable_infinite: false,
+        saturation: undefined,
+        nutrition: undefined,
+        drinkable: false
+    },
+    {
+        category: "Miscellaneous",
+        name: "cadena_en_fer",
+        lore: "",
+        display_name: "Cadena en fer",
+        is_eatable: false,
+        eatable_infinite: false,
+        saturation: undefined,
+        nutrition: undefined,
+        drinkable: false
+    },
+    {
+        category: "Miscellaneous",
+        name: "cadena_en_or",
+        lore: "",
+        display_name: "Cadena en or",
+        is_eatable: false,
+        eatable_infinite: false,
+        saturation: undefined,
+        nutrition: undefined,
+        drinkable: false
+    },
+    {
+        category: "Drink",
+        name: "cafe",
+        lore: "",
+        display_name: "Cafe",
+        is_eatable: false,
+        eatable_infinite: false,
+        saturation: undefined,
+        nutrition: undefined,
+        drinkable: true
+    },
+    {
+        category: "Food",
+        name: "cake_au_raisin",
+        lore: "",
+        display_name: "Cake au raisin",
+        is_eatable: true,
+        eatable_infinite: false,
+        saturation: 6,
+        nutrition: 5,
+        drinkable: false
+    },
+    {
+        category: "Drink",
+        name: "capuccino",
+        lore: "",
+        display_name: "Capuccino",
+        is_eatable: false,
+        eatable_infinite: false,
+        saturation: undefined,
+        nutrition: undefined,
+        drinkable: true
+    },
+    {
+        category: "Food",
+        name: "carotte_sauvage",
+        lore: "",
+        display_name: "Carotte Sauvage",
+        is_eatable: true,
+        eatable_infinite: false,
+        saturation: 1,
+        nutrition: 2,
+        drinkable: false
+    },
+    {
+        category: "Food",
+        name: "carpe",
+        lore: "",
+        display_name: "Carpe",
+        is_eatable: true,
+        eatable_infinite: false,
+        saturation: 1,
+        nutrition: 3,
+        drinkable: false
+    },
+    {
+        category: "Food",
+        name: "cerises",
+        lore: "",
+        display_name: "Cerises",
+        is_eatable: true,
+        eatable_infinite: false,
+        saturation: 1,
+        nutrition: 2,
+        drinkable: false
+    },
+    {
+        category: "Food",
+        name: "champignon_sauvage",
+        lore: "",
+        display_name: "Champignon Sauvage",
+        is_eatable: true,
+        eatable_infinite: false,
+        saturation: 1,
+        nutrition: 2,
+        drinkable: false
+    },
+    {
+        category: "Food",
+        name: "citron",
+        lore: "",
+        display_name: "Citron",
+        is_eatable: true,
+        eatable_infinite: false,
+        saturation: 1,
+        nutrition: 2,
+        drinkable: false
+    },
+    {
+        category: "Miscellaneous",
+        name: "cle_en_cuivre",
+        lore: "",
+        display_name: "Clé en cuivre",
+        is_eatable: false,
+        eatable_infinite: false,
+        saturation: undefined,
+        nutrition: undefined,
+        drinkable: false
+    },
+    {
+        category: "Miscellaneous",
+        name: "cle_en_fer",
+        lore: "",
+        display_name: "Clé en fer",
+        is_eatable: false,
+        eatable_infinite: false,
+        saturation: undefined,
+        nutrition: undefined,
+        drinkable: false
+    },
+    {
+        category: "Miscellaneous",
+        name: "cle_en_or",
+        lore: "",
+        display_name: "Clé en or",
+        is_eatable: false,
+        eatable_infinite: false,
+        saturation: undefined,
+        nutrition: undefined,
+        drinkable: false
+    },
+    {
+        category: "Miscellaneous",
+        name: "cone_de_glace",
+        lore: "",
+        display_name: "Cône de glace",
+        is_eatable: false,
+        eatable_infinite: false,
+        saturation: undefined,
+        nutrition: undefined,
+        drinkable: false
+    },
+    {
+        category: "Food",
+        name: "confiture",
+        lore: "",
+        display_name: "Confiture",
+        is_eatable: true,
+        eatable_infinite: false,
+        saturation: 13,
+        nutrition: 5,
+        drinkable: false
+    },
+    {
+        category: "Miscellaneous",
+        name: "coquille_huitre",
+        lore: "",
+        display_name: "Coquille d'huitre",
+        is_eatable: false,
+        eatable_infinite: false,
+        saturation: undefined,
+        nutrition: undefined,
+        drinkable: false
+    },
+    {
+        category: "Food",
+        name: "cote_de_boeuf",
+        lore: "",
+        display_name: "Côte de boeuf",
+        is_eatable: true,
+        eatable_infinite: false,
+        saturation: 10,
+        nutrition: 10,
+        drinkable: false
+    },
+    {
+        category: "Food",
+        name: "cote_de_porc",
+        lore: "",
+        display_name: "Côte de porc",
+        is_eatable: true,
+        eatable_infinite: false,
+        saturation: 9,
+        nutrition: 8,
+        drinkable: false
+    },
+    {
+        category: "Food",
+        name: "croissant",
+        lore: "",
+        display_name: "Croissant",
+        is_eatable: true,
+        eatable_infinite: false,
+        saturation: 5,
+        nutrition: 4,
+        drinkable: false
+    },
+    {
+        category: "Food",
+        name: "donut",
+        lore: "",
+        display_name: "Donut",
+        is_eatable: true,
+        eatable_infinite: false,
+        saturation: 3,
+        nutrition: 5,
+        drinkable: false
+    },
+    {
+        category: "Drink",
+        name: "expresso",
+        lore: "",
+        display_name: "Expresso",
+        is_eatable: false,
+        eatable_infinite: false,
+        saturation: undefined,
+        nutrition: undefined,
+        drinkable: true
+    },
+    {
+        category: "Food",
+        name: "fromage_1",
+        lore: "",
+        display_name: "Fromage",
+        is_eatable: true,
+        eatable_infinite: false,
+        saturation: 2,
+        nutrition: 3,
+        drinkable: false
+    },
+    {
+        category: "Food",
+        name: "fromage_2",
+        lore: "",
+        display_name: "Fromage",
+        is_eatable: true,
+        eatable_infinite: false,
+        saturation: 2,
+        nutrition: 3,
+        drinkable: false
+    },
+    {
+        category: "Food",
+        name: "gateau_d_anniversaire",
+        lore: "",
+        display_name: "Gateau d'anniversaire",
+        is_eatable: true,
+        eatable_infinite: false,
+        saturation: 10,
+        nutrition: 13,
+        drinkable: false
+    },
+    {
+        category: "Miscellaneous",
+        name: "golden_key",
+        lore: "",
+        display_name: "Clé dorée",
+        is_eatable: false,
+        eatable_infinite: false,
+        saturation: undefined,
+        nutrition: undefined,
+        drinkable: false
+    },
+    {
+        category: "Miscellaneous",
+        name: "huitre_vide",
+        lore: "",
+        display_name: "Huitre vide",
+        is_eatable: false,
+        eatable_infinite: false,
+        saturation: undefined,
+        nutrition: undefined,
+        drinkable: false
+    },
+    {
+        category: "Food",
+        name: "huitre",
+        lore: "",
+        display_name: "Huitre",
+        is_eatable: true,
+        eatable_infinite: false,
+        saturation: 1,
+        nutrition: 1,
+        drinkable: false
+    },
+    {
+        category: "Miscellaneous",
+        name: "lanterne_allumee",
+        lore: "",
+        display_name: "Lanterne allumée",
+        is_eatable: false,
+        eatable_infinite: false,
+        saturation: undefined,
+        nutrition: undefined,
+        drinkable: false
+    },
+    {
+        category: "Miscellaneous",
+        name: "lanterne_eteinte",
+        lore: "",
+        display_name: "Lanterne éteinte",
+        is_eatable: false,
+        eatable_infinite: false,
+        saturation: undefined,
+        nutrition: undefined,
+        drinkable: false
+    },
+    {
+        category: "Miscellaneous",
+        name: "lettre_dechiree",
+        lore: "",
+        display_name: "Lettre déchirée",
+        is_eatable: false,
+        eatable_infinite: false,
+        saturation: undefined,
+        nutrition: undefined,
+        drinkable: false
+    },
+    {
+        category: "Miscellaneous",
+        name: "lettre_enroulee",
+        lore: "",
+        display_name: "Lettre enroulée",
+        is_eatable: false,
+        eatable_infinite: false,
+        saturation: undefined,
+        nutrition: undefined,
+        drinkable: false
+    },
+    {
+        category: "Miscellaneous",
+        name: "lettre_fermee",
+        lore: "",
+        display_name: "Lettre fermée",
+        is_eatable: false,
+        eatable_infinite: false,
+        saturation: undefined,
+        nutrition: undefined,
+        drinkable: false
+    },
+    {
+        category: "Miscellaneous",
+        name: "lettre_ouverte",
+        lore: "",
+        display_name: "Lettre ouverte",
+        is_eatable: false,
+        eatable_infinite: false,
+        saturation: undefined,
+        nutrition: undefined,
+        drinkable: false
+    },
+    {
+        category: "Miscellaneous",
+        name: "marteau",
+        lore: "",
+        display_name: "Marteau",
+        is_eatable: false,
+        eatable_infinite: false,
+        saturation: undefined,
+        nutrition: undefined,
+        drinkable: false
+    },
+    {
+        category: "Miscellaneous",
+        name: "meduse",
+        lore: "",
+        display_name: "Meduse",
+        is_eatable: false,
+        eatable_infinite: false,
+        saturation: undefined,
+        nutrition: undefined,
+        drinkable: false
+    },
+    {
+        category: "Food",
+        name: "meule_de_fromage",
+        lore: "",
+        display_name: "Meule de fromage",
+        is_eatable: true,
+        eatable_infinite: false,
+        saturation: 15,
+        nutrition: 16,
+        drinkable: false
+    },
+    {
+        category: "Food",
+        name: "pain_au_chocolat",
+        lore: "",
+        display_name: "Pain au chocolat",
+        is_eatable: true,
+        eatable_infinite: false,
+        saturation: 2,
+        nutrition: 3,
+        drinkable: false
+    },
+    {
+        category: "Food",
+        name: "pain_brioche",
+        lore: "",
+        display_name: "Pain brioché",
+        is_eatable: true,
+        eatable_infinite: false,
+        saturation: 2,
+        nutrition: 3,
+        drinkable: false
+    },
+    {
+        category: "Food",
+        name: "pain_de_mie",
+        lore: "",
+        display_name: "Pain de mie",
+        is_eatable: true,
+        eatable_infinite: false,
+        saturation: 2,
+        nutrition: 3,
+        drinkable: false
+    },
+    {
+        category: "Food",
+        name: "pate_a_pizza",
+        lore: "",
+        display_name: "Pâte à pizza",
+        is_eatable: true,
+        eatable_infinite: false,
+        saturation: 1,
+        nutrition: 1,
+        drinkable: false
+    },
+    {
+        category: "Miscellaneous",
+        name: "perle_blonde",
+        lore: "",
+        display_name: "Perle blonde",
+        is_eatable: false,
+        eatable_infinite: false,
+        saturation: undefined,
+        nutrition: undefined,
+        drinkable: false
+    },
+    {
+        category: "Miscellaneous",
+        name: "perle_brune",
+        lore: "",
+        display_name: "Perle brune",
+        is_eatable: false,
+        eatable_infinite: false,
+        saturation: undefined,
+        nutrition: undefined,
+        drinkable: false
+    },
+    {
+        category: "Miscellaneous",
+        name: "piece_argent",
+        lore: "",
+        display_name: "Pièce d'argent",
+        is_eatable: false,
+        eatable_infinite: false,
+        saturation: undefined,
+        nutrition: undefined,
+        drinkable: false
+    },
+    {
+        category: "Miscellaneous",
+        name: "piece_cuivre",
+        lore: "",
+        display_name: "Pièce de cuivre",
+        is_eatable: false,
+        eatable_infinite: false,
+        saturation: undefined,
+        nutrition: undefined,
+        drinkable: false
+    },
+    {
+        category: "Miscellaneous",
+        name: "piece_or",
+        lore: "",
+        display_name: "Pièce d'or",
+        is_eatable: false,
+        eatable_infinite: false,
+        saturation: undefined,
+        nutrition: undefined,
+        drinkable: false
+    },
+    {
+        category: "Miscellaneous",
+        name: "pignon",
+        lore: "",
+        display_name: "Pignon",
+        is_eatable: false,
+        eatable_infinite: false,
+        saturation: undefined,
+        nutrition: undefined,
+        drinkable: false
+    },
+    {
+        category: "Projectile",
+        name: "pine",
+        lore: "",
+        display_name: "Pomme de pin",
+        is_eatable: false,
+        eatable_infinite: false,
+        saturation: undefined,
+        nutrition: undefined,
+        drinkable: false
+    },
+    {
+        category: "Food",
+        name: "prefous",
+        lore: "",
+        display_name: "Préfous",
+        is_eatable: true,
+        eatable_infinite: false,
+        saturation: 4,
+        nutrition: 5,
+        drinkable: false
+    },
+    {
+        category: "Food",
+        name: "sardine",
+        lore: "",
+        display_name: "Sardine",
+        is_eatable: true,
+        eatable_infinite: false,
+        saturation: 2,
+        nutrition: 3,
+        drinkable: false
+    },
+    {
+        category: "Drink",
+        name: "seau_de_fromage",
+        lore: "",
+        display_name: "Seau de fromage",
+        is_eatable: false,
+        eatable_infinite: false,
+        saturation: undefined,
+        nutrition: undefined,
+        drinkable: true
+    },
+    {
+        category: "Drink",
+        name: "sonde_urinaire",
+        lore: "",
+        display_name: "Sonde urinaire",
+        is_eatable: false,
+        eatable_infinite: false,
+        saturation: undefined,
+        nutrition: undefined,
+        drinkable: true
+    },
+    {
+        category: "Food",
+        name: "thon",
+        lore: "",
+        display_name: "Thon",
+        is_eatable: true,
+        eatable_infinite: false,
+        saturation: 2,
+        nutrition: 3,
+        drinkable: false
+    },
+    {
+        category: "Food",
+        name: "tomate",
+        lore: "",
+        display_name: "Tomate",
+        is_eatable: true,
+        eatable_infinite: false,
+        saturation: 2,
+        nutrition: 3,
+        drinkable: false
+    },
+    {
+        category: "Miscellaneous",
+        name: "trompette",
+        lore: "",
+        display_name: "Trompette",
+        is_eatable: false,
+        eatable_infinite: false,
+        saturation: undefined,
+        nutrition: undefined,
+        drinkable: false
+    },
+    {
+        category: "Food",
+        name: "truite",
+        lore: "",
+        display_name: "Truite",
+        is_eatable: true,
+        eatable_infinite: false,
+        saturation: 2,
+        nutrition: 3,
+        drinkable: false
+    },
 ]
-let flatten_categories = item_categories.map(c => c.textures.map(t => t.name)).flat()
+//give VoidSplit1 minecraft:clock 1 0 [item_model="cosmetics:pignon",consumable={animation:"drink",has_consume_particles:false,sound:"minecraft:entity.generic.drink"}]
 
-let displayed = flatten_categories
+// let displayed = flatten_categories
 let item_list = document.getElementById('item_list')
 let output = document.getElementById('output_input')
-
 
 let image_preview_box = document.getElementById('image_preview_box')
 let name_box = document.getElementById('name_box')
@@ -388,57 +774,90 @@ let lore_input = document.getElementById('lore_input')
 let quantity_input = document.getElementById('quantity')
 let player_selector = document.getElementById('player_selector')
 
+let eatable_yes = document.getElementById('eatable_yes')
+let eatable_no = document.getElementById('eatable_no')
+let eatable_value = false
+
+let infinity_yes = document.getElementById('infinity_yes')
+let infinity_no = document.getElementById('infinity_no')
+let infinity_value = false
+
+let nutrition_input = document.getElementById('nutrition')
+let saturation_input = document.getElementById('saturation')
+
 let selected_item;
 
 let custom_name = ""
 let custom_lore = ""
 let custom_lore_cmd = ""
 
+let nutrition = 1
+let saturation = 1
 let quantity = 1
-let selector = "@s"
-let cmd_item = undefined
-let cmd_id = undefined
-let cmd_name = undefined
-let potion_color = undefined
+let selector = "@p"
+let base_item = "clock"
+let item_name = undefined
 
-item_categories.forEach(cat => {
-    cat.textures.forEach(item => {
-        let DOM = document.createElement('div')
-        DOM.classList = "item"
-        let DOM_img = document.createElement('img')
-        DOM_img.src = `./assets/items/${item.name}.png`
-        DOM.append(DOM_img)
-        item_list.append(DOM)
+// liste items
+item_list_array.forEach(item => {
+    let DOM = document.createElement('div')
+    DOM.classList = "item"
+    let DOM_img = document.createElement('img')
+    DOM_img.src = `./assets/items/${item.name}.png`
+    DOM.append(DOM_img)
+    item_list.append(DOM)
+    DOM.addEventListener('click', () => {
+        potion_color = undefined
+        if(selected_item) {
+            selected_item.classList.remove('active')
+        }
+        DOM.classList.add('active')
+        selected_item = DOM
 
-        DOM.addEventListener('click', () => {
-            potion_color = undefined
-            if(selected_item) {
-                selected_item.classList.remove('active')
-            }
-            DOM.classList.add('active')
-            selected_item = DOM
 
-            if(cat.potion_color !== undefined) {
-                console.log(cat)
-                potion_color = cat.potion_color
-            }
+        image_preview_box.src = `./assets/items/${item.name}.png`
 
-            image_preview_box.src = `./assets/items/${item.name}.png`
+        item_name = item.name
+        custom_name = item.display_name
+        custom_lore = item.lore
 
-            cmd_item = cat.item
-            cmd_id = item.cmd
-            custom_name = item.display_name
-            cmd_name = item.display_name
-            update()
-        })
-        
+        name_input.value = item.display_name
+        lore_input.value = item.lore
+        if(item.nutrition !== undefined) {
+            nutrition_input.value = item.nutrition
+        } else {
+            nutrition_input.value = 0
+        }
+        if(item.saturation !== undefined) {
+            saturation_input.value = item.saturation
+        } else {
+            saturation_input.value = 0
+        }
+        if(item.is_eatable === true) {
+            eatable_value = true
+            eatable_no.classList.remove('selected')
+            eatable_yes.classList.add('selected')
+        } else {
+            eatable_value = false
+            eatable_no.classList.add('selected')
+            eatable_yes.classList.remove('selected')
+        }
+        if(item.eatable_infinite === true) {
+            infinity_value = true
+            infinity_no.classList.remove('selected')
+            infinity_yes.classList.add('selected')
+        } else {
+            infinity_value = false
+            infinity_no.classList.add('selected')
+            infinity_yes.classList.remove('selected')
+        }
+        update()
     })
 })
 
-
-
 output.value = ``
 
+// update command
 const update = () => {
     if(selected_item) {
         visualizer_content.classList = "visible"
@@ -448,21 +867,25 @@ const update = () => {
         name_box.textContent = custom_name
         lore_box.textContent = custom_lore
     
-        let command = `/minecraft:give ${selector} minecraft:${cmd_item}[minecraft:custom_model_data={value:${cmd_id}},minecraft:custom_name={"text":"${custom_name}","italic":false} ${custom_lore !== "" ? `,${custom_lore_cmd}` : ``}${potion_color !== undefined ? `,potion_contents={custom_color:${potion_color}}` : ``}] ${quantity}`
+        let command = `/give ${selector} minecraft:${base_item} ${quantity} 0 [item_model="cosmetics:${item_name}",${eatable_value === true ? `consumable={},food={nutrition:${nutrition},saturation:${saturation},can_always_eat:${infinity_value}},` : ``}minecraft:custom_name={"text":"${custom_name}","italic":false} ${custom_lore !== "" ? `,${get_lore_cmd()}` : ``}]`
+
         output.value = command
     }
 }
 
+// item name
 name_input.addEventListener('input', (e) => {
     custom_name = e.target.value
     update()
 })
+// player selector
 player_selector.addEventListener('input', (e) => {
 
     if(e.target.value.length > 0) selector = e.target.value
     else selector = "@s"
     update()
 })
+// quantity
 quantity_input.addEventListener('input', (e) => {
     if(e.target.value.length > 0) {
         if(e.target.value > 0 && e.target.value <= 64) quantity = e.target.value
@@ -471,6 +894,25 @@ quantity_input.addEventListener('input', (e) => {
     else quantity = 1
     update()
 })
+// nutrition
+nutrition_input.addEventListener('input', (e) => {
+    if(e.target.value.length > 0) {
+        if(e.target.value > 0 && e.target.value <= 64) nutrition = e.target.value
+        else nutrition = 1
+    }
+    else nutrition = 1
+    update()
+})
+// saturation
+saturation_input.addEventListener('input', (e) => {
+    if(e.target.value.length > 0) {
+        if(e.target.value > 0 && e.target.value <= 64) saturation = e.target.value
+        else saturation = 1
+    }
+    else saturation = 1
+    update()
+})
+// lore
 lore_input.addEventListener('input', (e) => {
     let lines = []
     e.target.value.split("\n").forEach(line => {
@@ -482,8 +924,49 @@ lore_input.addEventListener('input', (e) => {
     update()
 })
 
+const get_lore_cmd = () => {
+    let lines = []
+    custom_lore.split("\n").forEach(line => {
+        lines.push(`{"text":"${line}","italic":false}`)
+    })
+    let lore_command = `lore=[${lines.join(',')}]`
+
+    return lore_command
+}
+
+
+// eatable toggle switch
+eatable_no.addEventListener('click', (e) => {
+    eatable_value = false
+    eatable_no.classList.add('selected')
+    eatable_yes.classList.remove('selected')
+    update()
+})
+eatable_yes.addEventListener('click', (e) => {
+    eatable_value = true
+    eatable_no.classList.remove('selected')
+    eatable_yes.classList.add('selected')
+    update()
+})
+
+// infinity toggle switch
+infinity_no.addEventListener('click', (e) => {
+    infinity_value = false
+    infinity_no.classList.add('selected')
+    infinity_yes.classList.remove('selected')
+    update()
+})
+infinity_yes.addEventListener('click', (e) => {
+    infinity_value = true
+    infinity_no.classList.remove('selected')
+    infinity_yes.classList.add('selected')
+    update()
+})
+
+
 let output_btn = document.getElementById('output_btn')
 let copied_popup = document.getElementById('copied_popup')
+
 
 let is_started = false
 const start_pop_up = () => {

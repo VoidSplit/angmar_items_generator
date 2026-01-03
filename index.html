@@ -11,10 +11,6 @@
 <body>
     <div class="content">
         <h1>Liste des objets</h1>
-        <!--<div class="search-bar">
-            <input type="text" placeholder="">
-            <button>Rechercher</button>
-        </div>-->
         <div class="item_list" id="item_list">
 
         </div>
@@ -84,13 +80,49 @@
             </div>
         </div>
         <div class="inline_row">
-            <div class="labeled">
+            <div class="labeled full_width">
                 <h2>Selecteur</h2>
-                <input id="player_selector" type="text" value="@s" placeholder="Pseudo, @a, @s, @p, @r, @n..">
+                <input id="player_selector" type="text" value="@p" placeholder="Pseudo, @a, @s, @p, @r, @n..">
             </div>
-            <div class="labeled">
+            <div class="labeled full_width">
                 <h2>Quantité</h2>
                 <input id="quantity" type="number" min="1" max="64" value="1" placeholder="1">
+            </div>
+        </div>
+        <div class="inline_row ">
+            <div class="labeled">
+                <div class="inline_row">
+                    <div class="checkbox">
+                        <h2>Mangeable</h2>
+                        <div class="button_selector">
+                            <div class="option" id="eatable_yes">
+                                <p>Oui</p>
+                            </div>
+                            <div class="option selected" id="eatable_no">
+                                <p>Non</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="checkbox">
+                        <h2>Infini</h2>
+                        <div class="button_selector">
+                            <div class="option" id="infinity_yes">
+                                <p>Oui</p>
+                            </div>
+                            <div class="option selected" id="infinity_no">
+                                <p>Non</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="labeled full_width">
+                <h2>Nutrition</h2>
+                <input id="nutrition" type="number" min="1" max="20" value="1" placeholder="1">
+            </div>
+            <div class="labeled full_width">
+                <h2>Saturation</h2>
+                <input id="saturation" type="number" min="1" max="20" value="1" placeholder="1">
             </div>
         </div>
         <h1>Commande</h1>
