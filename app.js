@@ -2,7 +2,7 @@ let item_list_array = [
     {
         category: "Food",
         name: "baguette",
-        lore: "ceci est un lore",
+        lore: "",
         display_name: "Baguette",
         is_eatable: true,
         eatable_infinite: false,
@@ -871,7 +871,7 @@ const update = () => {
         name_box.textContent = custom_name
         lore_box.textContent = custom_lore
     
-        let command = `/give ${selector} minecraft:${base_item} ${quantity} 0 [item_model="cosmetics:${item_name}",${eatable_value === true ? `consumable={},food={nutrition:${nutrition},saturation:${saturation},can_always_eat:${infinity_value}},` : ``}${drinkable_value === true ? `consumable={animation:"drink",has_consume_particles:false,sound:"minecraft:entity.generic.drink"}` : ``}minecraft:custom_name={"text":"${custom_name}","italic":false} ${custom_lore !== "" ? `,${get_lore_cmd()}` : ``}]`
+        let command = `/give ${selector} minecraft:${base_item} ${quantity} 0 [item_model="cosmetics:${item_name}",${eatable_value === true ? `consumable={},food={nutrition:${nutrition},saturation:${saturation},can_always_eat:${infinity_value}},` : ``}${drinkable_value === true ? `consumable={animation:"drink",has_consume_particles:false,sound:"minecraft:entity.generic.drink"}` : ``},minecraft:custom_name={"text":"${custom_name}","italic":false} ${custom_lore !== "" ? `,${get_lore_cmd()}` : ``}]`
 
         output.value = command
     }
