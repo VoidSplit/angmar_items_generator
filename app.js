@@ -782,6 +782,10 @@ let infinity_yes = document.getElementById('infinity_yes')
 let infinity_no = document.getElementById('infinity_no')
 let infinity_value = false
 
+let drinkable_yes = document.getElementById('drinkable_yes')
+let drinkable_no = document.getElementById('drinkable_no')
+let drinkable_value = false
+
 let nutrition_input = document.getElementById('nutrition')
 let saturation_input = document.getElementById('saturation')
 
@@ -867,7 +871,7 @@ const update = () => {
         name_box.textContent = custom_name
         lore_box.textContent = custom_lore
     
-        let command = `/give ${selector} minecraft:${base_item} ${quantity} 0 [item_model="cosmetics:${item_name}",${eatable_value === true ? `consumable={},food={nutrition:${nutrition},saturation:${saturation},can_always_eat:${infinity_value}},` : ``}minecraft:custom_name={"text":"${custom_name}","italic":false} ${custom_lore !== "" ? `,${get_lore_cmd()}` : ``}]`
+        let command = `/give ${selector} minecraft:${base_item} ${quantity} 0 [item_model="cosmetics:${item_name}",${eatable_value === true ? `consumable={},food={nutrition:${nutrition},saturation:${saturation},can_always_eat:${infinity_value}},` : ``}${drinkable_value === true ? `consumable={animation:"drink",has_consume_particles:false,sound:"minecraft:entity.generic.drink"}` : ``}minecraft:custom_name={"text":"${custom_name}","italic":false} ${custom_lore !== "" ? `,${get_lore_cmd()}` : ``}]`
 
         output.value = command
     }
@@ -946,6 +950,11 @@ eatable_yes.addEventListener('click', (e) => {
     eatable_value = true
     eatable_no.classList.remove('selected')
     eatable_yes.classList.add('selected')
+
+    
+    drinkable_value = false
+    drinkable_no.classList.add('selected')
+    drinkable_yes.classList.remove('selected')
     update()
 })
 
@@ -960,6 +969,34 @@ infinity_yes.addEventListener('click', (e) => {
     infinity_value = true
     infinity_no.classList.remove('selected')
     infinity_yes.classList.add('selected')
+    
+
+    drinkable_value = false
+    drinkable_no.classList.add('selected')
+    drinkable_yes.classList.remove('selected')
+    update()
+})
+
+// drinkable toggle switch
+drinkable_no.addEventListener('click', (e) => {
+    drinkable_value = false
+    drinkable_no.classList.add('selected')
+    drinkable_yes.classList.remove('selected')
+    update()
+})
+drinkable_yes.addEventListener('click', (e) => {
+    drinkable_value = true
+    drinkable_no.classList.remove('selected')
+    drinkable_yes.classList.add('selected')
+
+    
+    eatable_value = false
+    eatable_no.classList.add('selected')
+    eatable_yes.classList.remove('selected')
+
+    infinity_value = false
+    infinity_no.classList.add('selected')
+    infinity_yes.classList.remove('selected')
     update()
 })
 

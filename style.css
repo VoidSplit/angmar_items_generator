@@ -375,7 +375,7 @@ body {
 }
 .button_selector .option {
     width: 100%;
-    height: 100%;
+    height: 32px;
     display: flex;
     align-items: center;
     justify-content: center;
