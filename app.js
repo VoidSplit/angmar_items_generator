@@ -410,7 +410,7 @@ let item_list_array = [
         category: "Food",
         name: "gateau_d_anniversaire",
         lore: "",
-        display_name: "Gateau d'anniversaire",
+        display_name: "Gâteau d'anniversaire",
         is_eatable: true,
         eatable_infinite: false,
         saturation: 10,
